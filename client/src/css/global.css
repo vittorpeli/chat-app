@@ -1,0 +1,49 @@
+@import "variables.css";
+@import "reset.css";
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+
+:focus-visible {
+  outline: none;
+}
+
+input {
+  outline: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .options {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fffff;
+    z-index: 999;
+    overflow-y: auto;
+  }
+}
