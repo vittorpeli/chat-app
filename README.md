@@ -8,4 +8,4 @@
 - [ ] Rooms States
 - [ ] Profile creation and edition
 - [ ] Invite users
-- [ ] Members Mangement
+- [ ] Members Management
