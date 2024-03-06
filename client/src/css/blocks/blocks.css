@@ -196,7 +196,8 @@
   font-weight: 600;
 }
 
-.authform input {
+.authform input,
+.input {
   width: 100%;
   height: var(--size-size-3);
   background: var(--color-dark-200);
@@ -212,6 +213,28 @@
   font-weight: 600;
 }
 
-.authform input:focus {
+.authform input:focus,
+.input:focus {
+  border: 2px solid var(--color-blue);
+}
+
+.authform input:focus-visible,
+.input:focus-visible {
+  border: 2px solid var(--color-blue);
+}
+
+.textarea {
+  display: flex;
+  font-size: var(--size-base);
+  line-height: var(--size-size-2);
+  color: var(--color-neutral-200);
+  background: transparent;
+  resize: none;
+  flex: 1 1 0%;
+  outline: none;
+  width: 100%;
+}
+
+.textarea:focus-visible {
   border: 2px solid var(--color-blue);
 }

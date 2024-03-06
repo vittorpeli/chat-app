@@ -1,9 +1,8 @@
-// import GroupIcon from '../../assets/group-icon.png';
 import UserIcon from '../../assets/user-icon.svg';
-import SettingIcon from '../../assets/settings-icon.svg';
 
 import { PropTypes } from "prop-types";
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ChatOptions ({ socket }) {
   const [users, setUsers] = useState([]);
@@ -49,9 +48,13 @@ export default function ChatOptions ({ socket }) {
             <p>#id</p>
           </div>
         </div>
-        <button className='btn' data-type="ghost">
+        <Link to="/chat/create" className='btn | mr-size-0' data-type="ghost" type='submit'>
+          +
+        </Link>
+        
+        {/* <button className='btn' data-type="ghost">
           <img src={SettingIcon} alt="Settings Button" className='w-size-1 h-size-1'/>
-        </button>
+        </button> */}
       </div>
     </div>
   )
