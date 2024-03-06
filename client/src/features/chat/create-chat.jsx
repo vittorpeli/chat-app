@@ -13,7 +13,7 @@ export default function CreateChat() {
   const { title, description } = fields;
 
   return (
-    <div className="wrapper">
+    <div className="wrapper | pt-size-1 min-h-screen">
       <div className="center">
         <form className="flow w-full">
           <p>
