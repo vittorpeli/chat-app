@@ -1,10 +1,11 @@
 import UserIcon from '../../assets/user-icon.svg';
+import GroupIcon from '../../assets/group-icon.png';
 
 import { PropTypes } from "prop-types";
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function ChatOptions ({ socket }) {
+export default function ChatOptions ({ socket, rooms }) {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -20,24 +21,29 @@ export default function ChatOptions ({ socket }) {
       <div className='h-px bg-dark-200 mt-0'></div>
       <div className="options__body | flow flex-1 flex-col">
         {users.map((user) => (
-          <p key={user.socketID}>
-            {user.userName}
-          </p>
+          <Link 
+            key={user.socketID}
+            className='msg-box | ml-base'
+          >
+            <img src={GroupIcon} alt=""/>
+            <div>
+              <h3>{user.userName}</h3>
+              <p>Last Message: 16h Ago</p>
+            </div>
+          </Link>
         ))}
-        {/* <div className="msg-box | ml-base">
-          <img src={GroupIcon} alt=""/>
-          <div>
-            <h3>Learn Javascript</h3>
-            <p>Last Message: 16h Ago</p>
-          </div>
-        </div>
-        <div className="msg-box | ml-base">
-          <img src={GroupIcon} alt=""/>
-          <div>
-            <h3>Group 2</h3>
-            <p>Last Message: 16h Ago</p>
-          </div>
-        </div> */}
+        <ul>
+          {rooms.map((room) => (
+            <li key={room.id}>
+              <Link
+                className='msg-box | ml-base'
+                to={`/chat/room/${room.id}`}
+              >
+                <p>{room.title}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className='options__footer | p-size-1 pl-0'>
@@ -62,4 +68,5 @@ export default function ChatOptions ({ socket }) {
 
 ChatOptions.propTypes = {
   socket: PropTypes.object,
+  rooms: PropTypes.array,
 }

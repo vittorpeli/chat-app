@@ -5,7 +5,6 @@ export function useFields (initialState = {}) {
 
   const handleInputChange = (e) => {
     setFields({ ...fields, [e.target.name]: e.target.value });
-    console.log(fields)
   }
 
   return { fields, handleInputChange }

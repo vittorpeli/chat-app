@@ -3,8 +3,12 @@ import FormInput from "../ui/form-input";
 import { useFields } from "../auth/useFields";
 import Button from "../ui/button";
 import TextArea from "../ui/textarea";
+import RoomService from "../../services/RoomService";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateChat() {
+  const navigate = useNavigate();
+
   const { fields, handleInputChange } = useFields({
     title: '',
     description: '',
@@ -12,14 +16,36 @@ export default function CreateChat() {
 
   const { title, description } = fields;
 
+  function handleCreateRoom(e) {
+    e.preventDefault();
+
+    submitRoom({ title, description });
+  }
+
+  async function submitRoom(formData) {
+    const room = {
+      title: formData.title,
+      description: formData.description,
+    }
+
+    const res = await RoomService.createRoom(room);
+    console.log(res);
+
+    // const roomId = res.data.id;
+    navigate(`/chat/`)
+  }
+
   return (
     <div className="wrapper | pt-size-1 min-h-screen">
       <div className="center">
-        <form className="flow w-full">
+        <form 
+          className="flow w-full"
+          onSubmit={handleCreateRoom}
+        >
           <p>
             <FormInput 
               type="text"
-              name="title"
+              name="title" 
               label="Title"
               placeholder="Room Name"
               value={title}

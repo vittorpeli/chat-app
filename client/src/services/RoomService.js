@@ -2,12 +2,14 @@ import HttpClient from "../utils/httpClient";
 
 const http = new HttpClient('http://localhost:3000/rooms');
 
-const listRooms = () => {
-  return http.get('/');
+const listRooms = async () => {
+  const res = await http.get('/');
+  return res.data;
 }
 
-const getRoomById = (id) => {
-  return http.get(`/${id}`);
+const getRoomById = async (id) => {
+  const res = await http.get(`/${id}`);
+  return res.data;
 }
 
 const createRoom = (room) => {

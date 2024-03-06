@@ -46,7 +46,7 @@ export default function MessageInput ({socket, currentRoomId, handleTyping}) {
 }
 
 MessageInput.propTypes = {
-  socket: PropTypes.object.isRequired,
-  currentRoomId: PropTypes.string.isRequired,
-  handleTyping: PropTypes.func.isRequired,
+  socket: PropTypes.object,
+  currentRoomId: PropTypes.string,
+  handleTyping: PropTypes.func,
 }
