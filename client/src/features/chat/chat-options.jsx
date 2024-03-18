@@ -12,6 +12,8 @@ export default function ChatOptions ({ socket, rooms }) {
     socket.on('newUserResponse', (data) => setUsers(data));
   }, [socket, users]);
 
+  // const currentUser = localStorage.getItem("userName");
+
   return (
     <div className="options | bg-dark-400 flow">
       <div className="options__header | center">
