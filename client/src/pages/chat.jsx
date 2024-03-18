@@ -16,8 +16,8 @@ function ChatPage({socket}) {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const rooms = await RoomService.listRooms();
-        setRooms(rooms);
+        const roomsList = await RoomService.listRooms();
+        setRooms(roomsList);
       } catch (err) {
         console.error('Error fetching rooms:', err);
       }
