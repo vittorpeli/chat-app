@@ -15,5 +15,5 @@ export default function Button({
 Button.propTypes = {
   variant: PropTypes.string,
   type: PropTypes.string,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 }

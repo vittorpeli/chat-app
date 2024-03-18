@@ -6,7 +6,9 @@ import TextArea from "../ui/textarea";
 import RoomService from "../../services/RoomService";
 import { useNavigate } from "react-router-dom";
 
-export default function CreateChat() {
+import { PropTypes } from "prop-types";
+
+export default function CreateChat({ socket }) {
   const navigate = useNavigate();
 
   const { fields, handleInputChange } = useFields({
@@ -31,8 +33,12 @@ export default function CreateChat() {
     const res = await RoomService.createRoom(room);
     console.log(res);
 
-    // const roomId = res.data.id;
-    navigate(`/chat/`)
+    const title = res.data.title;
+    const roomId = res.data.id;
+
+    socket.emit('createRoom', { title, roomId });
+
+    navigate('/chat/')
   }
 
   return (
@@ -68,4 +74,8 @@ export default function CreateChat() {
       </div>
     </div>
   )
+}
+
+CreateChat.propTypes = {
+  socket: PropTypes.object.isRequired,
 }

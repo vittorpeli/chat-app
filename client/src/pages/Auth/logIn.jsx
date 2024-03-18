@@ -18,7 +18,6 @@ function LogIn({ socket }) {
     console.log(response);
 
     const userName = response.data.name;
-    console.log(userName);
 
     const userNameStored = localStorage.setItem("userName", userName);
     

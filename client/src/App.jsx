@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route index element={<Home socket={socket}/>} />
+        <Route index element={<Home/>} />
         <Route 
           path="/chat" 
           element={<ChatPage socket={socket}/>}
@@ -23,7 +23,7 @@ function App() {
            <Route index element={<ChatIndex />} />
            <Route 
             path="create" 
-            element={<CreateChat />} 
+            element={<CreateChat socket={socket} />} 
           />
           <Route 
             path="room/:roomId"
