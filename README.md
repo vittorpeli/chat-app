@@ -2,8 +2,8 @@
 
 ## Todo
 
-- [ ] Unit-test API
-- [ ] Rooms functionality on client-side
+- [ X ] Unit-test API
+- [ X ] Rooms functionality on client-side
 - [ ] Dynamically Render rooms
 - [ ] Rooms States
 - [ ] Profile creation and edition
