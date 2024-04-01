@@ -5,7 +5,7 @@ The goal of the project was to work with web sockets both with Node JS and React
 
 ## How I Worked in this project
 Tech I used:
-- Client-side using React and Tailwind. I followed the basis of [CUBE CSS from Andy Bel with Tailwindl](https://github.com/Andy-set-studio/CUBE-with-tailwind) for styling.
+- Client-side using React and Tailwind. I followed the basis of [CUBE CSS from Andy Bell with Tailwind](https://github.com/Andy-set-studio/CUBE-with-tailwind) for styling.
 - At Server-side used Express, Socket.io for real-time messaging, and Prisma with SQLite for the database.
 
 For my work environment:
